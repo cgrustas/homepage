@@ -10,12 +10,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  background: linear-gradient(165deg, rgb(53, 132, 159) 15%, white 15%);
 }
 
 p {
   margin: 0;
   padding: 0;
-  font-size: 1.5rem;
   font-weight: 350;
 }
 
@@ -52,15 +52,20 @@ section.about {
 
 .about-image .title {
   bottom: 0;
-  left: 1rem;
   position: absolute;
   color: white;
   font-size: 4rem;
   font-weight: 400;
+  padding: 1rem;
 }
 
 .about-image picture {
   display: block;
+}
+
+.about p {
+  font-size: 1.25rem;
+  color: rgb(89, 89, 89);
 }
 
 .about-info {
@@ -76,7 +81,7 @@ h2 {
 }
 
 .about-info p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 350;
   color: rgb(89, 89, 89);
 }
@@ -171,14 +176,9 @@ h2 {
 .contact-info {
   display: flex;
   flex-direction: column;
-  font-size: 1.1rem;
   font-style: normal;
   font-weight: 350;
   gap: 1.5rem;
-}
-
-.contact-info .address p {
-  font-size: 1.1rem;
 }
 
 .contact-link {
@@ -199,4 +199,93 @@ h2 {
 
 .contact picture {
   display: block;
+}
+
+@media (min-width: 768px) {
+  section.about {
+    padding: 3rem 1.5rem;
+    background-color: white;
+    margin: 5rem;
+
+    margin-top: 8rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Remove flex/grid for desktop */
+    display: block;
+    position: relative;
+  }
+
+  .about-image {
+    position: static;
+    float: left;
+    max-width: 60%;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    transform: translate(-75px, -150px);
+    margin-right: calc(-75px + 1.5rem);
+    margin-bottom: calc(-150px + 0.5rem);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-image .title {
+    font-size: 3rem;
+    width: max-content;
+    position: absolute;
+    top: 0;
+    right: 4rem;
+    transform: translateX(100%);
+  }
+
+  .about h2 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .about p {
+    padding-left: 2rem;
+    font-size: 1rem;
+  }
+
+  .about-socials {
+    display: none;
+  }
+
+  .work {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+  }
+
+  .work h2 {
+    font-size: 2.5rem;
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-bottom: -2rem;
+  }
+
+  .contact {
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    place-items: center;
+  }
+
+  .contact h2 {
+    align-self: start;
+    font-size: 2.5rem;
+  }
+
+  .contact p,
+  .contact a {
+    font-size: 1rem;
+  }
+
+  .contact-socials {
+    justify-content: flex-start;
+  }
+
+  .contact-socials img {
+    width: 2rem;
+    height: 2rem;
+  }
 }
